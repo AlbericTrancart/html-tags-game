@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>HTML tags game</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="main-container">
+        <h1>HTML tags game</h1>
+
+        <p>
+          How many HTML tags do you know? You have
+          <span data-tags-total-count>142</span> seconds to guess all
+          <span data-tags-total-count>142</span>
+          tags!
+        </p>
+      </div>
+    </header>
+
+    <main class="main-container">
+      <form id="tag-form" class="tag-form">
+        <label for="tag">Enter a HTML tag:</label>
+        <input type="text" id="tag" name="tag" class="input" />
+        <button type="submit" class="submit">Submit</button>
+      </form>
+
+      <p id="game-over" class="game-over hidden">
+        <strong>Game Over!</strong>
+        <button id="reveal-missed-tags" class="link">
+          Reveal the ones you've missed
+        </button>
+        or <button id="try-again" class="link">try again</button>!
+      </p>
+
+      <label for="time-meter">Time left</label>
+      <meter
+        id="time-meter"
+        class="meter"
+        value="142"
+        min="0"
+        max="142"
+        low="20"
+        high="70"
+      >
+        142 seconds
+      </meter>
+
+      <p>
+        <strong>
+          <span id="tags-found-counter">0</span> /
+          <span data-tags-total-count>142</span> tags found!
+        </strong>
+      </p>
+
+      <ul id="tags-found-list" class="tags-list"></ul>
+
+      <div id="tags-missed-section" class="hidden">
+        <p><strong>You've missed:</strong></p>
+
+        <ul id="tags-missed-list" class="tags-list"></ul>
+      </div>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
